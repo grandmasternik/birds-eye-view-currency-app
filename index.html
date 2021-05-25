@@ -9,7 +9,6 @@
     <link rel="stylesheet" href="./css/style.css">
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <script defer src="./js/script.js"></script>
 
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link
@@ -23,51 +22,77 @@
     </header>
 
     <form>
-        <!-- <h3>How much do you want to convert?</h3> -->
-        
-        
-        <h3></h3>
-        <div>
-            <!-- <input type="number" placeholder='Enter amount' id='searchForm' /> -->
-            
-            
-            
-            
-        </div>
-<!-- 
-    <div class="dropdown">
-           <button onclick="myFunction()" class="dropbtn">Dropdown</button>
-           <div id="myDropdown" class="dropdown-content">
-               <a href="#">Link 1</a>
-               <a href="#">Link 2</a>
-               <a href="#">Link 3</a>
-            </div>
-        </div> -->
-        
-        
-        
-        
-        <h3 id="from_currency">From Currency</h3>
-        <select>
-            <option>AUD</option>
-        </select>
-        <h3 id="to_currency">To Currency</h3>
-        <select>
-            <option>CAD</option>
-        </select>
-<br /> <br /><br />
+        <h3>Please select the currencies you want to </h3>
 
-        <button id="goBtn" type="submit">Go</button>
+        <table>
+
+            <tr>
+                <td><h3 id="from_currency">Base Currency</h3>
+                </td>
+                <td>Quote Currency</td>
+            </tr>
+            <tr>
+
+                <td> <select id="fromCurrencyMenu">
+                        <option value="USD">United States Dollars</option>
+                        <option value="EUR">Euros</option>
+                        <option value="GBP">Great British Pounds</option>
+                        <option value="DZD">Algeria Dinars</option>
+                        <option value="ARP">Argentina Pesos</option>
+                        <option value="AUD" selected="selected">Australian Dollars</option>
+                        <option value="ATS">Austria Schillings</option>
+                        <option value="BSD">Bahamas Dollars</option>
+                        <option value="BBD">Barbados Dollars</option>
+                        <option value="BEF">Belgium Francs</option>
+                        <option value="BMD">Bermuda Dollars</option>
+                        <option value="BRR">Brazil Real</option>
+                        <option value="BGL">Bulgaria Lev</option>
+                        <option value="CAD">Canada Dollars</option>
+                        <option value="CLP">Chile Pesos</option>
+                        <option value="CNY">China Yuan Renmimbi</option>
+                    </select></td>
+                <td>
+                    <select id="toCurrencyMenu">
+                        <option value="USD">United States Dollars</option>
+                        <option value="EUR">Euro</option>
+                        <option value="GBP">Great British Pounds</option>
+                        <option value="DZD">Algeria Dinars</option>
+                        <option value="ARP">Argentina Pesos</option>
+                        <option value="AUD">Australia Dollars</option>
+                        <option value="ATS">Austria Schillings</option>
+                        <option value="BSD">Bahamas Dollars</option>
+                        <option value="BBD">Barbados Dollars</option>
+                        <option value="BEF">Belgium Francs</option>
+                        <option value="BMD">Bermuda Dollars</option>
+                        <option value="BRR">Brazil Real</option>
+                        <option value="BGL">Bulgaria Lev</option>
+                        <option value="CAD" selected="selected">Canada Dollars</option>
+                        <option value="CLP">Chile Pesos</option>
+                        <option value="CNY">China Yuan Renmimbi</option>
+                    </select>
+
+                </td>
+            </tr>
+
+
+        </table>
+
+       
     </form>
 
+    <br /><br />
+    <h2 class="pairHeader"><span id="renderFromCurrency">AUD</span> <span id="renderToCurrency">CAD</span></h2><br />
 
-<br /><br />
-    AUD CAD<br /> 
-    <div class="liveRates" id="audCadBox">
+ <span id="askPriceBox" class="liveQuoteBox"></span>
 
-    </div>
+<div id="countdownBar"> </div>
+
+
+ <td id="bidPriceBox" class="liveQuoteBox"></td>
+
 
     <footer></footer>
+    <script src="./js/script.js"></script>
 </body>
 
 </html>

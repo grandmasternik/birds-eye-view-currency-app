@@ -1,39 +1,51 @@
-let $audCadBox = $("#audCadBox");
+// Finnhub.io API key: c2m38iaad3idnodd6et0
 
-function getExchangeRate(currency1,currency2) {
-        
+let $dropdownBox = $("#dropdownBox");
+let $returnedData = $("#returnedData");
+
+let fromCurrencySymbol = $("#fromCurrencyMenu option:selected").val();
+let toCurrencySymbol = $("#toCurrencyMenu option:selected").val();
+
+let countdownBar = $("#countdownBar");
+
+function getExchangeRate() {
+
+    fromCurrencySymbol = $("#fromCurrencyMenu option:selected").val();
+    toCurrencySymbol = $("#toCurrencyMenu option:selected").val();
+
     $.ajax({
-        url: `https://www.alphavantage.co/query?function=CURRENCY_EXCHANGE_RATE&from_currency=${currency1}&to_currency=${currency2}&apikey=S0RUG5FIZMMSMIIO`
+        url: `https://finnhub.io/api/v1/forex/rates?base=${fromCurrencySymbol}&token=c2m38iaad3idnodd6et0`
     }).then(
-        function(returnedData) {
+        function (returnedData) {
 
-           // alert("Exchange rate function was called!");
-            $audCadBox.html(returnedData["Realtime Currency Exchange Rate"]["8. Bid Price"]);
-
-            console.log(returnedData["Realtime Currency Exchange Rate"]);
+            $("#askPriceBox").html(returnedData['quote'][toCurrencySymbol]);
 
         }
-
     )
-    
 }
 
 
-// getExchangeRate('AUD', 'CAD');
+
+const interval = setInterval(function () {
+
+    getExchangeRate();
+    
+countdownBar.width(400);
+
+countdownBar.animate({
+    width: "0px",
+    height: "1px",
+}, 4800);
 
 
-const interval = setInterval(function() {
-   // method to be executed;
-    getExchangeRate('AUD', 'CAD');
- }, 1000);
+}, 5000);
 
 setInterval(interval);
 
+// update displayed heading currency pairs
+$("select").change(function () {
+    $("#renderFromCurrency").html($("#fromCurrencyMenu option:selected").val());
+    $("#renderToCurrency").html($("#toCurrencyMenu option:selected").val());
+    getExchangeRate();
 
-
-
-
-
-
-
-
+});
