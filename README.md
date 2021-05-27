@@ -2,7 +2,10 @@
 Bird's Eye View
 
 ##Technologies Used
-Javascript, HTML and CSS was used alongside API https://finnhub.io/api/v1/forex/rates?base=${fromCurrencySymbol}&token=c2m38iaad3idnodd6et0`
+Javascript/jQuery
+HTML5
+CSS
+finnhub API 
 
 ##Screenshots
 <img src=`https://github.com/grandmasternik/currency-converter`>
