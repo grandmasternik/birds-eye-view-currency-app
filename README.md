@@ -5,7 +5,7 @@ Bird's Eye View
 Javascript, HTML and CSS was used alongside API https://finnhub.io/api/v1/forex/rates?base=${fromCurrencySymbol}&token=c2m38iaad3idnodd6et0`
 
 ##Screenshots
-
+<img src=`https://github.com/grandmasternik/currency-converter`>
 
 ##Getting Started
 link:
