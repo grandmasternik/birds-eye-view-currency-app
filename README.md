@@ -8,7 +8,7 @@ CSS
 finnhub API 
 
 ## Screenshots
-<img src=`https://github.com/grandmasternik/currency-converter`>
+![currency converter](https://github.com/grandmasternik/currency-converter)
 
 ## Getting Started
 link:
